@@ -1,0 +1,56 @@
+/* Flecha de indicação de rolagem de barra */
+
+.arrow {
+    width: 6vmin;
+    height: 6vmin;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3c3c3c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+
+    opacity: 1; /* totalmente visível */
+    transition: opacity 0.5s ease; /* transição suave */
+}
+
+.arrow::before,
+.arrow::after {
+    content: '';
+    width: 1.2vmin;
+    height: 1.2vmin;
+    border-width: 0.3vmin 0.3vmin 0 0;
+    border-style: solid;
+    border-color: #ffff;
+    transform: rotate(135deg);
+    position: absolute;
+
+    animation-name: moveDown;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+}
+
+.arrow::before {
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.arrow::after {
+    top: 35%;
+    animation-delay: 0.75s;
+}
+
+@keyframes moveDown {
+    0%, 100% {
+        transform: translateY(0) rotate(135deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(10px) rotate(135deg);
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'polls/media.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/consulta.css' %}">
+</head>
+
+<body>
+<header>{% include "polls/navbar.html" %}</header>
+<main>
+    <div class="container-esquerda">
+        <h2 id="palavras">Verbetes</h2>
+
+        <div class="lista-headwords">
+            <ul>
+                {% for headword in headwords %}
+                    <li>
+                        <a href="{% url 'consulta_verbete' headword %}?letra={{ letra_selecionada }}" class="headword-link">
+                            {{ headword }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="abecedario">
+            <a href="{% url 'consulta' %}" class="filtro-botao {% if not letra_selecionada %}ativo{% endif %}">Todos</a>
+            {% for letra in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+                <a href="{% url 'consulta' %}?letra={{ letra }}" class="filtro-botao {% if letra_selecionada == letra %}ativo{% endif %}">
+                    {{ letra }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+    <div class="conteudo">
+        <div class="container-meio">
+            {% if verbete_dados %}
+                <h2 class="verbete-headword">{{ verbete_dados.Headword }}</h2>
+                <div class="first-attestation-date">{{ verbete_dados.FirstAttestationDate }}</div>
+                <div class="etymology"><h3>Etimologia:</h3> {{ verbete_dados.Etymology | safe}}</div>
+                <div class="variant-spellings"><h3>Variantes:</h3>{{ verbete_dados.VariantSpellings }}</div>
+                <div class="first-example-md"><h3>Primeira citação:</h3>{{ verbete_dados.FirstAttestationExampleMD | safe}}</div>
+            {% else %}
+                <h2>Escolha um verbete na lista para ver os detalhes.</h2>
+            {% endif %}
+        </div>
+
+        <div class="container-direita">
+            <div class="metade-superior">
+                <h3>Definição(ões)</h3>
+                <ul>
+                    {% for definicao in verbete_dados.Definicoes %}
+                        <li>
+                            {{ definicao.SenseNumber }}: {{ definicao.Definition }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="metade-inferior">
+                <h3>Classe do verbete</h3>
+                <div class="wclass">{{ verbete_dados.WClass }}</div>
+                <div class="datas">
+                    <div class="date-of-creation"><h4>Criado:</h4> {{ verbete_dados.DateOfCreation }}</div>
+                    <div class="date-of-update"><h4>Atualização:</h4> {{ verbete_dados.DateOfUpdate }}</div>
+                </div>
+                <div class="credits"><h4>Creditos</h4>{{ verbete_dados.Credits }}</div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>{% include "polls/footer.html" %}</footer>
+<script src="{% static 'js/scroll_suave.js' %}"></script>
+</body>
+</html>

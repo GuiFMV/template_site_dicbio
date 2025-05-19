@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Documentacao</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'polls/media.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/documentation.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/seta.css' %}">
+</head>
+
+<body>
+<header>{% include "polls/navbar.html" %}</header>
+<main>
+    <div class="container_text">
+        <div class="texto_box_doc" id="prefacio">
+            <h1>Prefácio</h1>
+            <p>O <strong>Dicionário Histórico de Termos da Biologia</strong> é um dicionário eletrônico que visa reunir informações histórico-etimológicas sobre os termos da Biologia em língua portuguesa.</p>
+            <p>O projeto é coordenado pelo <strong>Prof. Dr. Bruno Oliveira Maroneze</strong> e conta com a participação de estudantes de graduação e pós-graduação da <strong>Universidade Federal da Grande Dourados (UFGD)</strong> e da <strong>Universidade Federal de Mato Grosso do Sul (UFMS)</strong>. É um projeto filiado ao <a href="https://nehilp.prp.usp.br/">Núcleo de Apoio à Pesquisa em Etimologia e História da Língua Portuguesa</a>, coordenado pela <strong>Prof.ª Dr.ª Vanessa Martins do Monte</strong>.</p>
+            <p>O desenvolvimento inicial deste dicionário foi possível graças ao estágio de pós-doutoramento desenvolvido pelo coordenador do projeto junto à <strong>Universidade de Coimbra (Portugal)</strong>, sob a supervisão da <strong>Profa. Dra. Graça Rio-Torto</strong>.</p>
+            <p>Atualmente, o projeto conta com o financiamento do <strong>Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)</strong>.</p>
+        </div>
+        <div class="texto_box_doc" id="objetivos">
+            <h1>Objetivos</h1>
+            <p>O objetivo geral deste projeto é compilar uma obra de referência, para consulta <em>online</em>, que descreva o léxico científico da língua portuguesa, na área das ciências biológicas, através da história.</p>
+            <p>Seus objetivos específicos são:</p>
+            <ul>
+                <li>Compilar um <div class="strong_p">córpus</div> histórico-diacrônico com textos sobre as ciências biológicas (cf. "Córpus");</li>
+                <li>Identificar as ocorrências dos termos em épocas anteriores;</li>
+                <li>Descrever as estruturas morfológicas (sufixos, prefixos, radicais eruditos etc.) empregadas em cada época na formação de termos;</li>
+                <li>Descrever a etimologia dos termos e as mudanças de forma e significado pelas quais passaram ao longo do tempo.</li>
+            </ul>
+        </div>
+        <div class="texto_box_doc" id="corpus">
+            <h1>Córpus</h1>
+            <p>O <strong>Dicionário Histórico de Termos da Biologia</strong> é inteiramente baseado num <strong>córpus</strong> formado por textos científicos publicados em língua portuguesa. Esse <strong>córpus</strong> (assim como o próprio dicionário) está em contínua atualização (cf. <a href="#politica-de-dados">"Política de disponibilização dos dados"</a>) e disponível integralmente (no repositório <em>GitHub</em>), por ser constituído apenas por textos em domínio público.</p>
+            <p>Optou-se por, inicialmente, incluir no <strong>córpus</strong> apenas textos do século XVIII (por ser este um momento histórico altamente significativo no desenvolvimento da Ciência, especialmente em língua portuguesa); posteriormente, pretende-se incluir outros períodos históricos (tanto anteriores quanto posteriores).</p>
+            <p>Os textos que compõem o <strong>córpus</strong> (cf. <a href="#textos-corpus">"Textos que compõem o córpus"</a>, abaixo) estão disponibilizados em formato <code>.xml</code> (cf. <a href="#politica-de-dados">"Política de disponibilização dos dados"</a>), com as etiquetas descritas abaixo; o <em>script</em> que extrai as informações dos textos (cf. <a href="#estrutura-computacional">"Estrutura computacional"</a>) também está disponível no repositório <em>GitHub</em>.</p>
+            <h1>Textos que compõem o córpus</h1>
+            <p>Os textos que integram o <strong>córpus</strong> podem ser encontrados nos <em>links</em> abaixo. O <strong>córpus</strong> transcrito em formato <code>.xml</code> está disponível no repositório <em>GitHub</em> (cf. <a href="#politica-de-dados">"Política de disponibilização dos dados"</a>).</p>
+            <ul>
+                <li><strong>BROTERO, Félix de Avelar.</strong> <a href="https://digitalis-dsp.uc.pt/botanica/UCFCTBt-B-78-1-15_2/UCFCTBt-B-78-1-15_2_item1/index.html" target="_blank">Compendio de Botanica</a>. Vol. 1. Paris: Vende-se em Lisboa, em caza de Paulo Martin, Mercador de Livros, 1788.</li>
+
+                <li><strong>SANTUCCI, Bernardo.</strong> <a href="https://books.google.com.br/books/about/Anatomia_do_corpo_humano.html?id=D83JL7ybBeUC&redir_esc=y" target="_blank">Anatomia do corpo humano</a>. Lisboa: na Officina de Antonio Pedrozo Galram, 1739.</li>
+
+                <li><strong>VANDELLI, Domingos.</strong> <a href="https://purl.pt/13958" target="_blank">Diccionario dos termos technicos de Historia Natural</a>. Coimbra: na Real Officina da Universidade, 1788.</li>
+            </ul>
+            <h1>Etiquetas XML empregadas no córpus</h1>
+            <p>Os textos que compõem o <strong>córpus</strong> são etiquetados com o emprego das seguintes etiquetas XML (inspiradas no padrão <a href="https://tei-c.org/" target="_blank">Text Encoding Initiative</a>):</p>
+            <ul>
+                <li><strong>text</strong> - É o nó-raiz de cada texto; contém os metadados do texto, indicados pelos atributos <code>author</code> (<em>autor</em>), <code>title</code> (<em>título</em>) e <code>date</code> (<em>data</em>);</li>
+                <li><strong>front</strong> - Elemento obrigatório que contém o texto da folha de rosto de cada obra;</li>
+                <li><strong>body</strong> - Elemento obrigatório que contém o texto principal de cada obra;</li>
+                <li><strong>back</strong> - Elemento obrigatório que contém os textos que eventualmente se encontram ao final de cada obra, após o texto principal, como índices e tabelas;</li>
+                <li><strong>title</strong> - Etiqueta que delimita títulos e subtítulos;</li>
+                <li><strong>p</strong> - Etiqueta que delimita parágrafos;</li>
+                <li><strong>s</strong> - Etiqueta que delimita sentenças ou contextos maiores, entendidos como mínimos para a exemplificação do emprego de algum termo;</li>
+                <li><strong>term</strong> - Etiqueta que marca os termos que integram a nomenclatura do dicionário; pode vir acompanhada dos atributos <code>lemma</code> (lema), <code>orth</code> (forma ortográfica atualizada), <code>msd</code> (descrição morfossintática, como "plural" ou "feminino") e <code>senseNumber</code> (número da acepção);</li>
+                <li><strong>w</strong> - Etiqueta empregada para o registro de informações (inseridas como atributos) sobre palavras diversas do texto, mas que não são termos e não constam da nomenclatura do dicionário;</li>
+                <li><strong>note</strong> - Etiqueta que delimita notas de rodapé ou de margem de página;</li>
+                <li><strong>foreign</strong> - Indica que a palavra ou o trecho delimitado está numa língua diferente da do português; o atributo <code>lang</code> indica que língua é essa;</li>
+                <li><strong>pb</strong> - Elemento vazio que indica quebra de página da obra; o número da página que se inicia a partir desta marca é indicado no atributo <code>n</code>;</li>
+                <li><strong>obs</strong> - Elemento vazio empregado para a inserção de observações diversas no texto, como comentários sobre a transcrição.</li>
+            </ul>
+        </div>
+        <div class="texto_box_doc" id="criteros_lexicograficos">
+            <h1>Critérios lexicográficos</h1>
+            <p>Descrevem-se aqui os critérios adotados na seleção das entradas e na elaboração dos verbetes.</p>
+            <h1>Nomenclatura</h1>
+            <p>Prevê-se que o <strong>Dicionário</strong> conterá a totalidade dos termos presentes no <em>córpus</em> analisado, ou seja, todos os substantivos, adjetivos e verbos (inclusive os formados por mais de uma palavra) que designam conceitos científicos relacionados às ciências biológicas e que ocorram nos textos que compõem o <em>córpus</em>. Por ser uma obra de natureza histórica, considera-se como referência a ciência da época dos textos analisados; ou seja, uma unidade lexical é considerada um termo se ela designava um conceito científico no período de circulação da obra, independentemente de esse conceito ser aceito ou não pela ciência do século XXI.</p>
+            <p>Como a totalidade dos termos é um objetivo ideal, a ser atingido no longo prazo, optou-se por disponibilizar os verbetes à medida que são incluídos (cf. <a href="#politica-de-dados">"Política de disponibilização dos dados"</a>).</p>
+            <h1>Informações presentes nos verbetes</h1>
+            <p>Cada entrada do dicionário contém:</p>
+            <ul>
+                <li>Classe gramatical;</li>
+                <li>Definições;</li>
+                <li>Contextos de ocorrência;</li>
+                <li>Formas variantes gráficas;</li>
+                <li>Informações histórico-etimológicas.</li>
+            </ul>
+            <p>No caso dos termos polissêmicos, as definições estão numeradas e os contextos de ocorrência estão agrupados juntamente com a definição correspondente.</p>
+            <p>O campo das variantes gráficas inclui as formas variantes do termo encontradas no <em>córpus</em>.</p>
+            <p>O campo das informações histórico-etimológicas traz uma discussão a respeito da etimologia do termo, com hipóteses a respeito de sua origem, as primeiras atestações na língua portuguesa, eventuais mudanças de significado pelas quais o termo passou ao longo da história e outras informações que os autores julguem relevantes para uma maior compreensão do termo.</p>
+            <h1>Bibliografia consultada</h1>
+            <ul>
+                <li>HOUAISS, Antônio; VILLAR, Mauro de Salles. <strong>Grande Dicionário Houaiss da Língua Portuguesa</strong>. Disponível em: <a href="https://houaiss.uol.com.br/" target="_blank">https://houaiss.uol.com.br/</a>.</li>
+                <li>GRÉCO, Gérard (dir.) <strong>Gaffiot 2016</strong>. Disponível em: <a href="https://gaffiot.fr/" target="_blank">https://gaffiot.fr/</a>. Baseado em: GAFFIOT, Félix. <strong>Dictionnaire Latin-Français</strong>. Paris: Hachette, 1934.</li>
+                <li>LIDDELL, Henry George; SCOTT, Robert; JONES, Henry Stuart (eds.). <strong>Greek-English Lexicon</strong>. 9. ed. Oxford: Clarendon Press, 1940. Disponível em: <a href="http://stephanus.tlg.uci.edu/lsj/#eid=1" target="_blank">http://stephanus.tlg.uci.edu/lsj/#eid=1</a>.</li>
+                <li>MEYER-LÜBKE, Wilhelm (org). <strong>Romanisches Etymologisches Wörterbuch</strong>. Heidelberg: Carl Winter's Universitätsbuchhandlung, 1911. Disponível em: <a href="https://archive.org/details/romanischesetymo00meyeuoft" target="_blank">https://archive.org/details/romanischesetymo00meyeuoft</a>.</li>
+                <li>OXFORD Latin Dictionary. Oxford: Clarendon Press, 1968.</li>
+            </ul>
+            <h1>Estrutura computacional</h1>
+            <p>O <strong>Dicionário</strong> apresenta uma interface computacional escrita em linguagem R e que funciona por meio da biblioteca <em>R Shiny</em>, que permite a criação de código HTML a partir da interação com o usuário. Dessa forma, com a seleção de uma entrada da lista à esquerda por parte do usuário, apresentam-se os dados referentes à entrada na parte direita da tela.</p>
+            <p>Os dados que "alimentam" essa interface, bem como o código-fonte em linguagem R, estão disponíveis para <em>download</em> no repositório <em>GitHub</em> (cf. <a href="#politica-de-dados">"Política de disponibilização dos dados"</a>).</p>
+            <h1>Política de disponibilização dos dados</h1>
+            <p>O <strong>Dicionário</strong> encontra-se em permanente atualização. Para dar mais agilidade à divulgação, optou-se por disponibilizar os verbetes à medida que vão sendo elaborados.</p>
+            <p>Em cada verbete, registram-se a data da inserção e a data da última atualização. Para facilitar aos pesquisadores que desejam referir-se aos dados, inclui-se também uma proposta de como citar o verbete.</p>
+            <p>Os dados e o código-fonte encontram-se disponíveis para <em>download</em> no repositório <em>GitHub</em> <a href="https://github.com/brunomaroneze/dicbio" target="_blank">neste <em>link</em></a>.</p>
+        </div>
+        <div class="texto_box_doc" id="publicacoes">
+            <h1>Publicações</h1>
+            <p>Incluem-se aqui as publicações dos membros da equipe relacionadas ao <strong>Dicionário Histórico de Termos da Biologia</strong>.</p>
+            <ul>
+                <li>BORGES, Luana da Silva. <a href="https://repositorio.ufms.br/handle/123456789/9290" target="_blank">Termos neológicos na obra de Brotero (1788)</a>. 2024. 53 p. Dissertação (mestrado em Estudos de Linguagens) - Faculdade de Artes, Letras e Comunicação, Universidade Federal de Mato Grosso do Sul, Campo Grande, 2024.</li>
+                <li>BARBOSA, Kamila da Silva. <a href="https://repositorio.ufms.br/handle/123456789/6740" target="_blank">Termos neológicos formados pelo sufixo -ado na obra de Vandelli (1788)</a>. 2023. 100 p. Dissertação (mestrado em Estudos de Linguagens) - Faculdade de Artes, Letras e Comunicação, Universidade Federal de Mato Grosso do Sul, Campo Grande, 2023.</li>
+                <li>BORGES, Luana da Silva; MARONEZE, Bruno. <a href="https://seer.ufu.br/index.php/GTLex/article/view/70509" target="_blank">Estudo da integração da unidade lexical “placenta” ao léxico português</a>. <em>Revista GTLex</em>, v. 9, 2023.</li>
+                <li>MARONEZE, Bruno; RIO-TORTO, Graça. <a href="https://revistas.ufrj.br/index.php/lh/article/view/52387/32319" target="_blank">A elaboração de um dicionário terminológico histórico com recursos digitais</a>. <em>Revista LaborHistórico</em>, v. 9, n. 1, e52387, 2023.</li>
+                <li>MARONEZE, Bruno. <a href="https://seer.ufu.br/index.php/GTLex/article/view/67628/35542" target="_blank">A polissemia de "gema" em diacronia</a>. <em>Revista GTLex</em>, v. 8, 2022/23.</li>
+                <li>BARBOSA, Kamila da Silva; MARONEZE, Bruno. <a href="https://www.letracapital.com.br/produto/estudos-do-lexico-diferentes-olhares-e-perspectivas/" target="_blank">Teorias semânticas e a definição nos dicionários: uma análise das definições de termos referentes a aves em dois dicionários da língua portuguesa</a>. In: DORES, Marcus; CORDEIRO, Maryelle (orgs.) <em>Estudos do léxico: diferentes olhares e perspectivas</em>. Rio de Janeiro: Letra Capital, 2022, pp. 64-77.</li>
+                <li>MARONEZE, Bruno. <a href="https://www.revistas.usp.br/linhadagua/article/view/159835" target="_blank">A história da pétala: etimologia de um termo científico</a>. <em>Linha D'Água</em>, v. 32, n. 3, 2019, pp. 159-176.</li>
+                <li>MARONEZE, Bruno. <a href="http://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/view/389/341/1394" target="_blank">Termos neológicos em sincronias pretéritas: um estudo do <em>Diccionario dos Termos Technicos de Historia Natural</em> de Vandelli</a>. In: GIL, Beatriz Daruj <em>et al.</em> <em>Saberes lexicais</em>. São Paulo: FFLCH-USP, 2019, pp. 96-109.</li>
+            </ul>
+        </div>
+        <div class="texto_box_doc" id="equipe">
+            <h1>Equipe</h1>
+            <ul>
+                <li><strong>Bruno Oliveira Maroneze</strong> (Professor Associado, Universidade Federal da Grande Dourados) - coordenação do projeto - desde 2017</li>
+                <li><strong>Sammara Valim Luz</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus, pesquisa etimológica - desde 2024</li>
+                <li><strong>Marimeire Almeida Barros</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus, pesquisa etimológica - desde 2024</li>
+                <li><strong>Ana Cristina Gouvêa Lopes</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus, pesquisa etimológica - desde 2024</li>
+                <li><strong>Vitória Fernandes Pereira</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus, pesquisa etimológica - desde 2024</li>
+                <li><strong>Rodrigo Daniel Castiglioni Aguero</strong> (Técnico de Informática, Universidade Federal da Grande Dourados) - desenho do website - desde 2023</li>
+                <li><strong>Guilherme Ferreira Mendes Vieira</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - desenho do website, programação do código e automação de tarefas - desde 2024</li>
+                <li><strong>Fabio Gustavo Mercado Urquieta</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - programação do código e automação de tarefas - 2023-2024</li>
+                <li><strong>Matheus Stein Casarin</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - desde 2023</li>
+                <li><strong>Ana Carolina Menegassi Rocha</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - desde 2023</li>
+                <li><strong>Luana Silva Borges</strong> (estudante de pós-graduação, Universidade Federal de Mato Grosso do Sul) - preparação do córpus, compilação dos verbetes - 2022-2024</li>
+                <li><strong>Kamila da Silva Barbosa</strong> (estudante de pós-graduação, Universidade Federal de Mato Grosso do Sul) - preparação do córpus, compilação dos verbetes - desde 2021</li>
+                <li><strong>Fabiani de Amorim Gonçalves</strong> (estudante de pós-graduação, Universidade Federal da Grande Dourados) - preparação do córpus, compilação dos verbetes - 2022-2023</li>
+                <li><strong>Dannielly Victória Rodrigues da Silva</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2023-2024</li>
+                <li><strong>Adriane Maria de Oliveira Queiroz</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2022-2023</li>
+                <li><strong>Raíssa Silveira Buss</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2022-2023</li>
+                <li><strong>Rafaela Lima Domingos</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2021-2022</li>
+                <li><strong>Letícia Tranquile da Silva</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus, compilação dos verbetes - 2020-2022</li>
+                <li><strong>Fabiana Ferreira de Melo da Silva Sales</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2020-2021</li>
+                <li><strong>Bruno Leonardo Campanholi Gilbert</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2020</li>
+                <li><strong>Daniela Martim do Nascimento</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2020</li>
+                <li><strong>Cinddy Daniela Lima Tragueta</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2020</li>
+                <li><strong>Amarildo Braga de Oliveira</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2017-2018</li>
+                <li><strong>Florival Dourado dos Reis Neto</strong> (estudante de graduação, Universidade Federal da Grande Dourados) - preparação do córpus - 2017</li>
+            </ul>
+        </div>
+        <div class="texto_box_doc" id="agradecimentos">
+            <h1>Agradecimentos</h1>
+            <p>A compilação do córpus foi (e ainda é) possível graças à colaboração de estudantes de graduação da Universidade Federal da Grande Dourados, alguns dos quais receberam bolsas de Iniciação Científica da PROPP-UFGD e do CNPq.</p>
+            <p>O projeto atualmente conta com o valiosíssimo financiamento do CNPq por meio do Edital Pró-Humanidades 2022, sob a forma de bolsas de Iniciação Científica e de Apoio Técnico.</p>
+            <p>A redação dos primeiros verbetes e a criação da parte computacional do dicionário foram possíveis graças ao estágio de pós-doutoramento desenvolvido pelo coordenador do projeto junto à Universidade de Coimbra (Portugal), sob a supervisão da Profa. Dra. <strong>Graça Rio-Torto</strong>.</p>
+            <p>A hospedagem do dicionário no servidor da FFLCH-USP foi possível graças à importante parceria com o <strong>NEHiLP</strong> e ao valioso auxílio do técnico <strong>Thiago Gomes Veríssimo</strong>.</p>
+            <p>Agradecemos a <strong>Ligeia Lugli</strong> (University of London) pelas valiosas orientações a respeito de como implementar um dicionário eletrônico online.</p>
+            <p>Agradecemos a <strong>Gisele Cristina da Conceição</strong> (Universidade do Porto) pelas valiosas sugestões e opiniões.</p>
+        </div>
+        <div class="texto_box_doc" id="contato">
+            <h1>Contato</h1>
+            <p>Para comentários, perguntas e sugestões, contate <a href="mailto:brunomaroneze@ufgd.edu.br">brunomaroneze@ufgd.edu.br</a></p>
+        </div>
+    </div>
+    <div class="container_fixed">
+        <div class="texto_link_doc">
+            <a href="#prefacio">Prefácio</a>
+            <a href="#objetivos">Objetivos</a>
+            <a href="#corpus">Córpus</a>
+            <a href="#criteros_lexicograficos">Critérios lexicográficos</a>
+            <a href="#publicacoes">Publicações</a>
+            <a href="#equipe">Equipe</a>
+            <a href="#agradecimentos">Agradecimentos</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </div>
+    <div class="arrow"></div>
+</main>
+<footer>{% include "polls/footer.html" %}</footer>
+<script src="{% static 'js/scroll_suave.js' %}"></script>
+</body>
+</html>

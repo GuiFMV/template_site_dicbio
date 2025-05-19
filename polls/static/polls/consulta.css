@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container-esquerda {
+    width: 16%;
+    height: 90vh;
+    position: fixed;
+    left: 16px;
+    top: 5rem;
+    padding: 0px 20px;
+    color: #006CA6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.lista-headwords {
+    max-height: calc(100vh - 200px);
+    margin-top: 42px;
+    padding-right: 4px;
+    overflow-y: hidden; /* Oculta por padrão */
+    transition: all 0.3s ease;
+}
+
+/* Mostra scrollbar ao passar o mouse */
+.lista-headwords:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Estilo da barra de rolagem */
+.lista-headwords::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-headwords::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3;; /* cinza claro */
+    border-radius: 6px;
+}
+
+.lista-headwords::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Firefox */
+.lista-headwords {
+    scrollbar-width: none; /* Oculta no Firefox por padrão */
+}
+
+.lista-headwords:hover {
+    scrollbar-width: thin;
+    scrollbar-color: #aaa #f0f0f0;
+}
+
+.lista-headwords ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-headwords ul li {
+    margin-bottom: 10px;
+}
+
+.container-esquerda ul{
+    list-style: none;
+    padding: 2px;
+    color: #006CA6;
+}
+
+.container-esquerda ul li{
+    margin-bottom: 10px;
+}
+
+.container-esquerda #palavras{
+    position: fixed;
+    padding: 5px 15px 1px 10px;
+    background: #fff;
+    z-index: 1;
+}
+
+.abecedario {
+    padding: 10px 0;
+    margin-bottom: 24px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+}
+
+.filtro-botao {
+    background-color: #f8f8f8;
+    color: #006CA6;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.filtro-botao:hover {
+    background-color: #d3d3d3;
+}
+
+.filtro-botao.ativo {
+    background-color: #006CA6;
+    color: #fff;
+    border: 2px solid #003B6F;
+}
+
+.headword-link {
+    font-weight: bold;
+    color: #006CA6;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: block; /* Faz a headword ocupar toda a largura disponível */
+    padding: 5px; /* Espaçamento interno para um visual mais limpo */
+    text-decoration: none;
+}
+
+.headword-link:hover {
+    background-color: #d3d3d3; /* Cinza um pouco escuro */
+    border-radius: 5px;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.container-meio {
+    color: #fff;
+    margin: 0rem 1rem 2rem 3rem;
+    padding: 2rem;
+    width: 100%;
+    background: #006CA6;
+    border-radius: 2rem;
+    box-shadow: 1rem 8px 25px #6a6a6a;
+    margin-left: 18%;
+    overflow-x: hidden; /* evita scroll horizontal */
+    word-wrap: break-word; /* força quebra de palavras longas */
+    word-break: break-word; /* força quebra onde for necessário */
+}
+
+.container-direita {
+    width: 30%;
+    color: #006CA6;
+    margin: 0rem 1rem 0rem 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Ajusta conforme necessário */
+    gap: 1rem;
+}
+
+.metade-superior,
+.metade-inferior {
+    flex: 1; /* Cada um ocupa 50% */
+    overflow-y: auto;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa #f0f0f0;
+}
+
+.container-direita ul li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.conteudo {
+    display: flex;
+    width: 100%;
+}
+/* configurações dos campos */
+
+.first-attestation-date{
+    color: #D3D3D3;
+    margin: 0px 0px 8px 0px;
+}
+
+.etymology, .first-example-md{
+    margin: 10px 0px;
+}
+
+.datas{
+    margin: 8px 0px 0px 0px;
+}
+
+.date-of-creation, .date-of-update, .credits{
+ font-size: 15px;
+}
+
+.date-of-creation h4,
+.date-of-update h4 {
+    margin-right: 4px;
+}
+

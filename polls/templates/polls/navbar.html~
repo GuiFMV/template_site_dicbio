@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'polls/navbar.css' %}">
+    <title>NavBar</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <div class="logo">
+        <img src="{% static 'polls/images/dicbio_logo.svg' %}" width="80">
+        <p>DicBio</p>
+    </div>
+
+    <nav class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'consulta' %}">Consulta</a>
+        <a href="{% url 'documentacao' %}">Documentação</a>
+        <a href="{% url 'curiosidades' %}">Curiosidades</a>
+    </nav>
+</body>
+</html>

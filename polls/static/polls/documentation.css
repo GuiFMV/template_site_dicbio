@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container_text{
+    width: calc(100% - 30%); /* Ajusta para compensar o espaço do fixo */
+    margin-right: 30%; /* Mesma largura do container fixo */
+}
+
+.container_text a{
+    color: #fff;
+}
+
+.container_text a:hover{
+    color: yellow;
+}
+
+h1{
+    font-weight: 800;
+    padding: 5px 0px 10px 0;
+}
+
+p{
+    padding: 8px;
+}
+
+.container_text ul{
+    padding: 0 25px;
+}
+
+.container_text li{
+    padding: 8px;
+}
+
+.texto_box_doc{
+    color: #fff;
+    margin: 0rem 0rem 2rem 3rem;
+    padding: 2rem;
+    width: 100%;
+    background: #006CA6;
+    border-radius: 2rem;
+    box-shadow: 1rem 8px 25px #6a6a6a;
+}
+
+.texto_link_doc{
+    margin-top: 1rem;
+    display: flex;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    flex-wrap: nowrap;
+    padding: 16px;
+    flex-direction: column;
+    margin-left: 80px;
+
+    flex: 1; /* Cada um ocupa 50% */
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa #f0f0f0;
+}
+
+.texto_link_doc a{
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+    text-decoration: none;
+    color: #006CA6;
+}
+
+.texto_link_doc a:hover {
+    background-color: #d3d3d3; /* Cinza um pouco escuro */
+    border-radius: 5px;
+    scroll-behavior: smooth;
+}
+
+.texto_link_doc a:visited {
+    color: #006CA6; /* Mantém a cor original mesmo após o clique */
+}
+
+.container_fixed {
+    width: 30%; /* Define a largura fixa */
+    position: fixed;
+    right: 0;
+    top: 5rem; /* Alinha com o topo do main */
+    height: 100vh; /* Faz ocupar toda a altura da tela */
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo for grande */
+    padding: 1rem;
+}
+
+.strong{
+    color: #fff;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>Curiosidades</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'polls/media.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/text_curiosidades.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/seta.css' %}">
+
+</head>
+<body>
+
+    <header>{% include "polls/navbar.html" %}</header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <div class="container_text">
+            <div class="texto_box" id="ortografia_xviii">
+                <h1>Curiosidades</h1>
+                <p id="p_curiosidades">Nesta seção, divulgaremos textos com fatos curiosos que descobrimos durante a elaboração deste dicionário.</p>
+                <h2>A ortografia do século XVIII</h2>
+                <div class="autor_data">
+                    <p><strong>Por Ana Cristina Gouvêa Lopes</strong></p>
+                    <p><em>11 de novembro de 2024</em></p>
+                </div>
+                <p>Uma das tarefas que realizamos em nosso projeto consiste na transcrição do livro “Anatomia do corpo humano”, escrito por Bernardo Santucci. O livro foi escrito em 1739 em Lisboa; assim, devido à sua antiguidade, durante o processo da transcrição, diversas vezes nos deparamos com palavras que temos dificuldades em decifrar. Veja neste trecho:</p>
+                <img src="{% static 'polls/images/curiosidadeOrtografia01.png'%}" alt="Trecho do livro de Santucci">
+                <p>Logo na primeira linha, a palavra “mesma" apresenta o S escrito com o que se parece um F, que é o chamado “s longo”. Era escrito sempre no começo ou no meio das palavras. Até nos acostumarmos com essa letra, a transcrição é uma tarefa complicada. Também vemos aí o nosso “etc.” representado por “&c”.</p>
+                <img src="{% static 'polls/images/curiosidadeOrtografia02.png'%}" alt="Trecho do livro de Santucci">
+                <p>Temos palavras como “saõ” e “estaõ”, nas quais o til está presente na letra O, e não na letra A, como atualmente usamos. Na imagem também temos algumas palavras com a repetição da letra L, como “daquelles” e “pelles”.</p>
+                <img src="{% static 'polls/images/curiosidadeOrtografia03.png'%}" alt="Trecho do livro de Santucci">
+                <p>Aqui, nós podemos observar a palavra “quaes”; o plural das palavras terminadas em -al era em -aes, e não em -ais, como é hoje. Também temos o “humas”, que hoje é escrito sem a letra normalmente conhecemos sem a letra H inicial.</p>
+                <p>É interessante também notar a palavra “commuas”, que é o feminino de “comuns”. Esse adjetivo tinha forma feminina, mas hoje tem uma forma só para os dois gêneros.</p>
+                <img src="{% static 'polls/images/curiosidadeOrtografia04.png'%}" alt="Trecho do livro de Santucci">
+                <p>Aqui neste trecho, temos a palavra “foy” escrita com Y no final, em vez do I. No trecho podemos observar várias outras palavras bem diferentes da grafia atual. Apesar da dificuldade de interpretação durante o processo de transcrição, nos acostumamos gradativamente com as diferenças e vai se tornando mais fácil compreendermos o que é diferente no nosso português de hoje.</p>
+            </div>
+            <div class="texto_box" id="bernardo_santucci">
+                <h2>Resumo biográfico de Bernardo Santucci</h2>
+                <div class="autor_data">
+                    <p>Por Matheus Stein Casarin e Bruno Maroneze</p>
+                    <p>01 de novembro de 2024</p>
+                </div>
+                <p>
+                    Segundo o <a href="https://dicionario.ciuhct.org/santucci-bernardo/"> Dicionário de Cientistas, Engenheiros e Médicos em Portugal</a>, Bernardo Santucci, nascido por volta de 1701 em Cortona, no Grão-Ducado da Toscana, formou-se em Medicina pela Universidade de Bolonha e aprofundou o estudo de anatomia no Hospital de Santa Maria Nuova, em Florença. Seu desempenho o levou a ser nomeado médico da
+                    princesa Violante Beatriz da Baviera, e em 1730, com cartas de recomendação dela, partiu para Lisboa. Logo ao chegar, foi nomeado médico anatômico do rei D. João V e, dois anos depois, tornou-se professor de anatomia no Hospital Real de Todos os Santos.
+                </p>
+                <p>
+                    <strong>Santucci</strong> publicou em <strong>1739</strong> <em>A Anatomia do Corpo Humano</em>, o único compêndio ilustrado de anatomia publicado em Portugal no século XVIII e, até onde se sabe, a primeira obra sobre o tema publicada em língua portuguesa. Era destinado aos aprendizes do Hospital Real.</p>
+                <p>
+                    Logo após essa publicação, a prática de dissecação de cadáveres para o ensino da anatomia foi proibida por um decreto real, talvez por influência dos críticos de Santucci. Mesmo com a proibição, Santucci continuou a ensinar Anatomia por cerca de sete a oito anos antes de retornar à Itália em 1747. Em 1751, ele voltou a Portugal,
+                    onde foi recompensado pelo rei D. José com uma pensão de 30.000 réis e o título de cavaleiro da Ordem de São Tiago. Pouco depois, retornou definitivamente à Itália, onde faleceu em 1764.
+                </p>
+                <p>Um estudo de Hermano Neves (<a href="https://publikationen.ub.uni-frankfurt.de/opus4/frontdoor/deliver/index/docId/13946/file/E001880973.pdf">“O livro de Bernardo Santucci e a ‘Anatomia Corporis Humani’ de Verheyen. Contribuição para o estudo da obra do anatómico cortonense.” Arquivo de anatomia e antropologia 10 (1926): 315–346</a>) indicou que a maior parte das gravuras da obra de Santucci, produzidas pelo francês Michel le Bouteaux, eram adaptações da obra <em>Corporis Humani Anatomia</em> (1707) do anatomista flamengo Philip Verheyen. A prática de copiar imagens era comum no século XVIII para reduzir custos e lidar com a falta de cadáveres para dissecação, mas há indícios de que também o texto tenha sido “plagiado”. De qualquer forma, a importância pedagógica da obra em Portugal foi grande, tendo sido usada ainda por várias décadas após a sua publicação. Acrescentamos a isso também a importância linguística, visto que a partir dela foram difundidos inúmeros termos médicos que ainda não tinham equivalente na língua portuguesa.</p>
+            </div>
+        <!-- Seção Brotero e a bananeira-->
+            <div class="texto_box" id="brotero_bananeira">
+                <h2>Brotero e a bananeira: reflexões sobre o fazer científico no século XVIII</h2>
+                <div class="autor_data">
+                    <p>Por Bruno Maroneze e Dannielly Victória Rodrigues da Silva</p>
+                    <p>14 de julho de 2023</p>
+                </div>
+                <p>Qual foi a planta de cujas folhas Adão e Eva fizeram suas roupas depois do Pecado Original? É estranho para nós, nos dias de hoje, pensar que esse tema possa ser objeto de investigação científica. Mas já foi no passado.</p>
+                <p>No texto bíblico (em <strong>Gênesis 3:7</strong>), afirma-se que Adão e Eva fizeram vestes com folhas de figueira. No entanto, Brotero não ficou muito convencido disso. Em seu <em>Compendio de Botanica</em> (1788), numa nota de rodapé à p. ix, assim ele afirma:</p>
+                <blockquote>
+                    <p>As folhas da bananeira (<em>Musa paradisiaca</em>, Lin.), planta propria dos climas do Tigre e Euphrates, e a cujos fructos alguns autores antigos chamaõ figos, foraõ provavelmente as que Adam empregou para fazer o sayotte com que se cobrio; ellas saõ de huma sufficiente solidez e algumas tem cinco pes de comprido e huma largura proporcionada; os fios tirados do corpo da planta podiaõ facilmente ser empregados para cozer as dictas folhas. Milton contudo foy de parecer que as folhas com que Adam e Eva se cobriraõ foraõ as da figueira de Bengala; mas isto he menos verosimil, visto que ellas tem, quando muito, oito pollegadas de comprido e tres de largo.</p>
+                </blockquote>
+                <p>Esse trecho suscita muitas reflexões, entre elas as seguintes:</p>
+                <h2>1. A relevância e cientificidade da questão</h2>
+                <p>A reflexão mais óbvia que se pode fazer é justamente sobre a relevância e a cientificidade da questão. Nenhum cientista do século XXI, por mais religioso que possa ser, entenderia ser relevante identificar a que variedade de figueira o autor do Gênesis estaria se referindo. Brotero, no entanto, não viu problema em analisar essa questão numa obra de caráter científico.</p>
+                <h2>2. O debate com um poeta</h2>
+                <p>Em segundo lugar, observamos outra característica do fazer científico de Brotero que seria praticamente inconcebível no século XXI: o autor não viu problema em “debater” suas ideias com um poeta, em vez de outro cientista. Milton, mencionado por Brotero, é o poeta <strong>John Milton</strong> (1608-1674), autor do poema <em>Paraíso Perdido</em>, que narra em versos algumas histórias do Gênesis. Ao narrar o trecho em que Adão e Eva costuram suas roupas (<em>Paradise Lost</em>, livro 9, versos 1100-1110), Milton descreve a árvore de onde eles tiraram as folhas (a figueira de Bengala); Brotero, por sua vez, acha “inverossímil” a narrativa poética de Milton (que, obviamente, por ser poética, não tem compromisso com a realidade dos fatos) e hipotetiza que a árvore seria, na verdade, uma bananeira.</p>
+                <p>Precisamos ser justos com Brotero: ele não foi o único a debater com Milton nem foi o único a propor que a árvore pudesse ser uma bananeira. Segundo Marissa Nicosia (no artigo <a href="https://muse.jhu.edu/pub/2/article/685423">“Milton’s Banana: Paradise Lost and Colonial Botany”</a>, publicado em <em>Milton Studies</em>, 2017), o intelectual britânico <strong>Horace Walpole</strong> (1717-1797), contemporâneo de Brotero, teria proposto essa “hipótese” numa anotação feita à margem do seu exemplar do <em>Paraíso Perdido</em>.</p>
+                <h2>3. A banana como "figo"</h2>
+                <p>Brotero, nesse trecho, faz uma afirmação muito curiosa, que nos leva inicialmente a duvidar um pouco: ele afirma que os frutos da bananeira eram chamados de “figos” por alguns autores antigos. Para nós, leitores do século XXI, isso pode parecer absurdo, mas Brotero está certíssimo: é fato que a banana já foi chamada de “figo” em certa época. Podemos comprovar isso com o seguinte trecho da obra <em>Coloquios dos simples</em>, de Garcia de Horta (publicado em 1563 e consultável <a href="https://digitarq.arquivos.pt/details?id=4614066">neste link</a>):</p>
+                <blockquote>
+                    <p>[...] e os figos na lĩgoa canarĩ, e decanim, e guzerate, e bẽgala se chama quelli, e os malauares lhe chamã palã, e o malayo piçã porque ẽ todas estas terras hos hà, e vos ponho ho nome nesas lĩgoas e tãbẽ os hà, e ẽ outras muitas o Arabio lhe chama musa ou amusa fazẽ delles capitulo Aviçena, e Sarapiã, e chamãlhe pollo mesmo nome, e raseis tãbẽ lhe chama pella [sic] mesmo nome tãbẽ ha estes figos ẽ guine, chamãlhes bananas. (p. 91 verso)</p>
+                </blockquote>
+                <p>Os “figos” referidos por Garcia de Horta eram chamados, em árabe, de “musa”, forma esta que inspirou o nome científico da banana (<em>Musa paradisiaca Linn.</em>) e, na região do Golfo da Guiné, de “bananas”, ou seja, não há dúvidas de que eram a fruta que conhecemos atualmente por banana.</p>
+                <p>Uma pesquisa no Google nos levou a sites que afirmam que, no Caribe, até hoje bananas são chamadas de “figos” (<a href="https://www.reddit.com/r/CaribbeanCuisine/comments/111la7j/do_you_refer_to_bananas_as_figs/">ver aqui</a>).</p>
+                <h2>4. Brotero e o criacionismo</h2>
+                <p>Fica evidente, pelo trecho apresentado, que Brotero era um criacionista, ou seja, ele acreditava que a narrativa bíblica do Gênesis devia ser lida como factual. Sabemos, pela sua biografia, que por pouco Brotero não foi ordenado padre; mas isso seria um mero detalhe. O fato é que todos os cientistas da época eram criacionistas, simplesmente porque não se concebia alternativa a essa “teoria”.</p>
+                <p>Sabemos, também pela biografia de Brotero, que ele e Lamarck mantiveram uma amizade enquanto ambos viviam em Paris (aproximadamente entre 1778 e 1790). Mas o próprio Lamarck ainda era um criacionista, só tendo passado a admitir a evolução posteriormente (talvez a partir de 1802, com a publicação de sua obra <em>Recherches sur l’Organisation des Corps Vivants</em>).</p>
+                <h2>Conclusão</h2>
+                <p>Em suma, esse e outros trechos da obra de Brotero nos fazem refletir sobre como era ser um cientista e como era fazer ciência no século XVIII. Ideias que hoje parecem ser consensos óbvios, como “uma verdade religiosa não deve ser considerada uma ver
+            </div>
+        </div>
+        <div class="container_fixed">
+            <div class="texto_link_curiosidades">
+                <a href="#ortografia_xviii">A ortografia do século XVIII</a>
+                <a href="#bernardo_santucci">Biografia de Santucci</a>
+                <a href="#brotero_bananeira">Brotero e a Bananeira</a>
+            </div>
+        </div>
+
+        <div class="arrow"></div>
+    </main>
+
+    <footer>{% include "polls/footer.html" %}</footer>
+    <script src="{% static 'js/scroll_suave.js' %}"></script>
+</body>
+</html>
